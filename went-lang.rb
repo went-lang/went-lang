@@ -52,6 +52,12 @@ class Parser
  def self.Reverse(arr)
 	puts arr[1].reverse
  end
+ def self.LogicalAnd(arr)
+	puts arr[0] && arr[1]
+ end
+ def self.LogicalOR(arr)
+	puts arr[0] || arr[1]
+ end
 
 end
 
@@ -73,6 +79,10 @@ class Lexer
 	 Parser.Print(cmd.split(':'))
 	elsif cmd.split(':')[0] == "reverse"
 	 Parser.Reverse(cmd.split(':'))
+	elsif cmd.include?"and"
+	 Parser.LogicalAnd(cmd.split('and'))
+	elsif cmd.include?"or"
+	 Parser.LogicalOR(cmd.split('or'))
 	else
 	 puts " #{cmd} is not a WENT command"
 	end
