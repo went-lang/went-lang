@@ -49,6 +49,9 @@ class Parser
  def self.Print(arr)
  	puts arr[1]
  end
+ def self.Reverse(arr)
+	puts arr[1].reverse
+ end
 
 end
 
@@ -68,6 +71,8 @@ class Lexer
 	 Parser.FloatingPoint(cmd.split(' '))
 	elsif cmd.split(':')[0] == "print"
 	 Parser.Print(cmd.split(':'))
+	elsif cmd.split(':')[0] == "reverse"
+	 Parser.Reverse(cmd.split(':'))
 	else
 	 puts " #{cmd} is not a WENT command"
 	end
