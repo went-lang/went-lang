@@ -46,6 +46,9 @@ class Parser
 	end
 	puts sum
  end
+ def self.Print(arr)
+ 	puts arr[1]
+ end
 
 end
 
@@ -63,6 +66,8 @@ class Lexer
 	 Parser.Power(cmd.split(' '))
 	elsif cmd.split(' ').include?"%"
 	 Parser.FloatingPoint(cmd.split(' '))
+	elsif cmd.split(':')[0] == "print"
+	 Parser.Print(cmd.split(':'))
 	else
 	 puts " #{cmd} is not a WENT command"
 	end
