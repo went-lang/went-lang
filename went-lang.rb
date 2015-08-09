@@ -102,4 +102,3 @@ class REPL
 end
 
 
-REPL.REPL()
