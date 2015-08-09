@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+require './went-lang.rb'
+
+file = ARGV[0]
+
+File.open(file, 'r') do |ln|
+while line = ln.gets
+ line["\n"] = ""
+ print Lexer.Lexer(line)
+end
+end
+
